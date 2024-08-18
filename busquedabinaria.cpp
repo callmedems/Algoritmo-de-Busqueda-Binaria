@@ -5,21 +5,22 @@
 
 using namespace std;
 
+// estructura
 struct Empleado {
     string nombre;
     int edad;
     string hobby;
     string habilidades;
 
-    //  comparación alfabética de los nombres de empleados en el vector
-    // para la línea sort()
+    // comparación alfabética de los nombres de empleados en el vector
+    // la línea sort() usa este operador
     bool operator<(const Empleado& otro) const {
         return nombre < otro.nombre;
     }
 
     // búsqueda binaria
     static Empleado* buscarEmpleado(vector<Empleado>& empleados, const string& nombreEmpleado) {
-        Empleado empleadoBuscado = {nombreEmpleado, 0, "", ""}; // es un placeholder
+        Empleado empleadoBuscado = {nombreEmpleado, 0, "", ""}; // es un placeholder para el buscador
         // este será el iterador para buscar en el vector
         auto buscador = lower_bound(empleados.begin(), empleados.end(), empleadoBuscado);
         if (buscador != empleados.end() && buscador->nombre == nombreEmpleado) {
@@ -38,6 +39,7 @@ int main() {
     sort(empleados.begin(), empleados.end());
 
 
+    // variable para condición del bucle
     cout << "¿Desea buscar un empleado?: ";
     string decision;
     cin >> decision;
