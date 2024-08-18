@@ -1,3 +1,6 @@
+// DEMMÍ ELIZABETH ZEPEDA RUBIO A01709619
+// Actividad 1 - Algoritmo de Búsqueda binaria
+// 18-08-2024
 #include <iostream>
 #include <vector>
 #include <algorithm> // para la búsqueda, en sort() y lower_bound()
